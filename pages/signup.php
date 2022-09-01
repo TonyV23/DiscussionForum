@@ -1,9 +1,16 @@
+<?php require "../actions/signupAction.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../includes/head.php'; ?>
 <body>
     <br><br><br><br>
     <form class="container" method="POST">
+
+        <?php 
+            if (isset($errorMessage)){ echo "<p>".$errorMessage."</p>";}
+        ?>
+
         <div class="mb-3">
             <label for="pseudo" class="form-label">Pseudo</label>
             <input type="text" class="form-control" name="pseudo">
@@ -24,7 +31,7 @@
             <input type="password" class="form-control" name="password">
         </div>
         
-        <button type="submit" class="btn btn-primary">Signup</button>
+        <button type="submit" class="btn btn-primary" name="validate">Signup</button>
     </form>    
 </body>
 </html>
