@@ -19,7 +19,7 @@
                 $insertUserOnTheWebSite -> execute(array($pseudoUser,$nameUser,$surnameUser,$passwordUser));
 
                 $getInfosOfThisUser = $dbConnect -> prepare("SELECT id_user,pseudo_user,name_user,surname_user FROM users_table WHERE name_user=? and surname_user=?");
-                $getInfosOfThisUser -> execute(array($pseudoUser,$nameUser,$surnameUser));
+                $getInfosOfThisUser -> execute(array($nameUser, $surnameUser));
 
                 $userInfos = $getInfosOfThisUser -> fetch();
 
