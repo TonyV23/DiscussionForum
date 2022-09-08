@@ -33,7 +33,7 @@
                 header("Location : index.php");
 
             }else
-                $errorMessage = "User already exists on the website";
+                $$errorMessage = "User already exists on the website";
 
 
         }else

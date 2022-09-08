@@ -32,6 +32,8 @@
         </div>
         
         <button type="submit" class="btn btn-primary" name="validate">Signup</button>
+        <br><br>
+        <a href="login.php"><p>I already have an account, login</p></a>
     </form>    
 </body>
 </html>
