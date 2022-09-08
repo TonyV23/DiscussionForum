@@ -10,7 +10,7 @@
             $surnameUser = htmlspecialchars($_POST["surname"]);
             $passwordUser = password_hash($_POST["password"],PASSWORD_DEFAULT);
 
-            $checkIfUserAlreadyExists = $dbConnect -> prepare("SELECT pseudo_user FROM users_table WHERE pseudo_user = ?");
+            $checkIfUserAlreadyExists = $dbConnect -> prepare("SELECT pseudo_user FROM users_table WHERE pseudo_user=?");
             $checkIfUserAlreadyExists->execute(array($pseudoUser));
 
             if ($checkIfUserAlreadyExists -> rowCount() == 0){
@@ -18,8 +18,8 @@
                 $insertUserOnTheWebSite = $dbConnect -> prepare("INSERT INTO users_table(pseudo_user,name_user,surname_user,password_user)VALUES(?,?,?,?)");
                 $insertUserOnTheWebSite -> execute(array($pseudoUser,$nameUser,$surnameUser,$passwordUser));
 
-                $getInfosOfThisUser = $dbConnect -> prepare("SELECT id_user,pseudo_user,name_user,surname_user FROM users_table WHERE name_user=? and surname_user=?");
-                $getInfosOfThisUser -> execute(array($nameUser, $surnameUser));
+                $getInfosOfThisUser = $dbConnect -> prepare("SELECT id_user,pseudo_user,name_user,surname_user FROM users_table WHERE name_user=? AND surname_user=? AND pseudo_name=?");
+                $getInfosOfThisUser -> execute(array($nameUser,$surnameUser,$pseudoUser));
 
                 $userInfos = $getInfosOfThisUser -> fetch();
 
@@ -33,7 +33,7 @@
                 header("Location : index.php");
 
             }else
-                $errorMessageRegister = "User already exists on the website";
+                $errorMessage = "User already exists on the website";
 
 
         }else
