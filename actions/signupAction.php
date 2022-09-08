@@ -25,10 +25,10 @@
 
                 // authentication user on website
                 $_SESSION["auth"] = true;
-                $_SESSION["id_user"] = $userInfos["id_user"];
-                $_SESSION["pseudo_user"] = $userInfos["pseudo_user"];
-                $_SESSION["name_user"] = $userInfos["name_user"];
-                $_SESSION["surname_user"] = $userInfos["surname_user"];
+                $_SESSION["id"] = $userInfos["id_user"];
+                $_SESSION["pseudo"] = $userInfos["pseudo_user"];
+                $_SESSION["name"] = $userInfos["name_user"];
+                $_SESSION["surname"] = $userInfos["surname_user"];
 
                 header("Location : index.php");
 
