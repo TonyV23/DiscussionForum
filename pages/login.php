@@ -1,4 +1,4 @@
-<?php include "../actions/loginAction.php" ?>
+<?php include "../actions/users/loginAction.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include "../includes/head.php" ?>

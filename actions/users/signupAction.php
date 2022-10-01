@@ -34,8 +34,6 @@
 
             }else
                 $errorMessage = "User already exists on the website";
-
-
         }else
             $errorMessage = "Please complete all fields !";    
     }

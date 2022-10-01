@@ -1,5 +1,5 @@
 <?php
-    require "../actions/db_connect.php";
+    require "../db_connect.php";
 
     if(isset($_POST["validate"])){
         if(!empty($_POST["pseudo"]) && !empty($_POST["password"])){
