@@ -13,17 +13,17 @@
             if ($checkIfUserExists->rowCount() > 0){
                 
                 $usersInfos = $checkIfUserExists->fetch();
-                if (password_verify($pseudoUser,$usersInfos["password_user"])){
+                if (password_verify($passwordUser,$usersInfos["password_user"])){
                     
                     // authentication user on website
                     $_SESSION["auth"] = true;
-                    $_SESSION["id"] = $userInfos["id_user"];
-                    $_SESSION["pseudo"] = $userInfos["pseudo_user"];
-                    $_SESSION["name"] = $userInfos["name_user"];
-                    $_SESSION["surname"] = $userInfos["surname_user"];
+                    $_SESSION["id"] = $usersInfos["id_user"];
+                    $_SESSION["pseudo"] = $usersInfos["pseudo_user"];
+                    $_SESSION["name"] = $usersInfos["name_user"];
+                    $_SESSION["surname"] = $usersInfos["surname_user"];
                     
                     // redirection to homepage
-                    header("Location : ../pages/index.php");
+                    header("Location: index.php");
                     
                 }else
                     $errorMessage = "Your password is incorrect";
